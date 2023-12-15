@@ -640,6 +640,7 @@ Public Class frmMain
     '-------------Calculate Order---------------
     'checks if account has been created
     Public Sub accountCreated()
+        If lblUsername == "Signed In" Then
         accountCreatedSwitch = True
     End Sub
 
@@ -652,8 +653,8 @@ Public Class frmMain
 
         Dim currentDate As String = DateTime.Now.ToString("hh:mm dddd, dd MMMM yyyy")
 
-
-        If accountCreatedSwitch = False Then
+        
+        If accountCreatedSwitch = accountCreated() Then
             dlgButton = MessageBox.Show("You need to create an account before you can proceed with your order",
                                         "Mr. Grocer's App",
                                         MessageBoxButtons.OK,
